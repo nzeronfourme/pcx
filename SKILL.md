@@ -1,5 +1,6 @@
 ---
-description: Tune this Windows 10 or 11 PC with an AI agent. Use when the user says /pcx, runs pcx doctor, pastes the pcx install link, asks to optimize this PC, says "оптимизируй ПК", "ускорь компьютер", "запусти сканирование", "почисти компьютер", or replies with the numbers you proposed.
+name: pcx
+description: Tune this Windows 10 or 11 PC with an AI agent. Use when the user says /pcx, runs pcx doctor, pastes the pcx install link, asks to optimize this PC, says "оптимизируй ПК", "ускорь компьютер", "почисти компьютер", "настрой компьютер", or replies with the numbers you proposed.
 ---
 
 # pcx skill

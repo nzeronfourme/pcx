@@ -293,8 +293,15 @@ Describe 'skill and documentation contract' {
         $text | Should -Match '(?i)never hide'
     }
 
-    It 'puts the triggers in the first 35 words of the skill description' {
+    It 'declares name pcx and puts the triggers in the first 35 words of the skill description' {
         $text = [System.IO.File]::ReadAllText((Join-Path $script:RepoRoot 'SKILL.md'))
+
+        # OpenCode derives the name from the directory only for flat skills/*.md;
+        # nested skills/<name>/SKILL.md needs an explicit name or it is dropped.
+        $name = [regex]::Match($text, '(?m)^name:\s*(.+)$')
+        $name.Success | Should -BeTrue -Because 'nested skill loaders require name: in SKILL.md frontmatter'
+        $name.Groups[1].Value.Trim() | Should -BeExactly 'pcx' -Because 'the frontmatter name must match the skill folder'
+
         $match = [regex]::Match($text, '(?m)^description:\s*(.+)$')
         $match.Success | Should -BeTrue
 
