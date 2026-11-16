@@ -1,0 +1,79 @@
+{
+  "schema": "pcx-manual/1",
+  "file": "manual",
+  "entries": [
+    {
+      "id": "windows-old",
+      "kind": "manual",
+      "risk": "safe",
+      "measure": [
+        { "Kind": "file", "Path": "%SYSTEMROOT%\\..\\Windows.old" }
+      ],
+      "user_text_ru": "Удалить папку Windows.old ({target})",
+      "user_text_en": "Delete the Windows.old folder ({target})",
+      "outcome_ru": "папка удаляется навсегда; откат невозможен.",
+      "outcome_en": "the folder is deleted for good; not reversible."
+    },
+    {
+      "id": "wer",
+      "kind": "manual",
+      "risk": "safe",
+      "measure": [
+        { "Kind": "file", "Path": "%PROGRAMDATA%\\Microsoft\\Windows\\WER" },
+        { "Kind": "file", "Path": "%LOCALAPPDATA%\\Microsoft\\Windows\\WER" }
+      ],
+      "user_text_ru": "Удалить отчёты об ошибках Windows ({target})",
+      "user_text_en": "Delete the Windows Error Reporting files ({target})",
+      "outcome_ru": "отчёты удаляются навсегда; новые появятся снова при сбоях.",
+      "outcome_en": "the reports are deleted for good; new ones appear after a crash."
+    },
+    {
+      "id": "temp",
+      "kind": "manual",
+      "risk": "safe",
+      "measure": [
+        { "Kind": "file", "Path": "%LOCALAPPDATA%\\Temp" }
+      ],
+      "user_text_ru": "Очистить временные файлы ({target})",
+      "user_text_en": "Clear temporary files ({target})",
+      "outcome_ru": "файлы, занятые приложениями, будут пропущены; откат невозможен.",
+      "outcome_en": "files held open by applications are skipped; not reversible."
+    },
+    {
+      "id": "hiberfil",
+      "kind": "manual",
+      "risk": "behavior",
+      "measure": [
+        { "Kind": "file", "Path": "%SYSTEMROOT%\\..\\hiberfil.sys" }
+      ],
+      "user_text_ru": "Выключить гибернацию (hiberfil.sys)",
+      "user_text_en": "Turn hibernation off (hiberfil.sys)",
+      "outcome_ru": "гибернация и быстрый запуск перестанут работать; вернуть: powercfg /h on.",
+      "outcome_en": "hibernation and fast startup stop working; restore with powercfg /h on."
+    },
+    {
+      "id": "vbs",
+      "kind": "dont-touch",
+      "user_text_ru": "VBS (Virtualization-Based Security): не трогать. Отключение снижает защиту и ломает совместимость; pcx никогда не меняет эту настройку.",
+      "user_text_en": "VBS (Virtualization-Based Security): do not touch. Disabling it weakens protection and breaks compatibility; pcx never changes this setting."
+    },
+    {
+      "id": "anticheat",
+      "kind": "dont-touch",
+      "user_text_ru": "Античит-клиенты: не трогать. Изменение их служб или файлов может заблокировать защищённую игру; pcx никогда их не меняет.",
+      "user_text_en": "Anticheat clients: do not touch. Changing their services or files can block a protected game; pcx never modifies them."
+    },
+    {
+      "id": "vbs-hvci",
+      "kind": "dont-touch",
+      "user_text_ru": "VBS и HVCI (целостность памяти): не трогать. Отключение ослабляет защиту ради игрового прироста, который pcx никогда не делает.",
+      "user_text_en": "VBS and HVCI (memory integrity): do not touch. Disabling them weakens protection for a gaming trade pcx never makes."
+    },
+    {
+      "id": "defender-exclusions",
+      "kind": "dont-touch",
+      "user_text_ru": "Исключения защитника: не трогать. Исключение путей ослабляет защиту; pcx никогда не меняет настройки исключений.",
+      "user_text_en": "Defender exclusions: do not touch. Excluding paths weakens protection; pcx never changes exclusion settings."
+    }
+  ]
+}

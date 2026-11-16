@@ -1,0 +1,45 @@
+{
+  "schema": "pcx-actions/1",
+  "file": "performance",
+  "actions": [
+    {
+      "id": "game-dvr",
+      "findingId": "game-dvr",
+      "target": [
+        { "Kind": "registry", "Path": "HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\GameDVR", "Name": "AppCaptureEnabled" },
+        { "Kind": "registry", "Path": "HKCU\\System\\GameConfigStore", "Name": "GameDVR_Enabled" }
+      ],
+      "category": "B",
+      "evidence_rule": {
+        "kind": "state",
+        "metric": "performance.game_dvr_enabled",
+        "domain": "performance",
+        "predicate": "equals:true"
+      },
+      "verified_on_build": [26100, 26200],
+      "inverse": "snapshot",
+      "group": "performance",
+      "user_text_ru": "Отключить запись Game DVR. Предлагается только когда она включена; прежние значения сохраняются в снимке. Эффект не обещан.",
+      "user_text_en": "Disable Game DVR capture. Offered only when it is enabled; previous values are kept in a snapshot. effect not promised."
+    },
+    {
+      "id": "hags",
+      "findingId": "hags",
+      "target": [
+        { "Kind": "registry", "Path": "HKLM\\SYSTEM\\CurrentControlSet\\Control\\GraphicsDrivers", "Name": "HwSchMode" }
+      ],
+      "category": "B",
+      "evidence_rule": {
+        "kind": "state",
+        "metric": "performance.hags_mode",
+        "domain": "performance",
+        "predicate": "is-off"
+      },
+      "verified_on_build": [26100, 26200],
+      "inverse": "snapshot",
+      "group": "performance",
+      "user_text_ru": "Включить аппаратное планирование GPU (HAGS), когда оно сейчас выключено. Требование DLSS Frame Generation: функция работает только при включённом HAGS. Эффект не обещан.",
+      "user_text_en": "Enable hardware-accelerated GPU scheduling (HAGS) only when it currently reads OFF. DLSS Frame Generation requires HAGS to be enabled. effect not promised."
+    }
+  ]
+}

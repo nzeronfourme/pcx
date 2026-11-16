@@ -1,0 +1,139 @@
+{
+  "schema": "pcx-actions/1",
+  "file": "behavior",
+  "actions": [
+    {
+      "id": "diagtrack-u4",
+      "findingId": "auto-services",
+      "target": [
+        { "Kind": "service", "Name": "DiagTrack", "Start": 4 }
+      ],
+      "category": "B",
+      "evidence_rule": {
+        "kind": "telemetry",
+        "metric": "intent.prefetch_files",
+        "domain": "intent",
+        "predicate": "at-least:1"
+      },
+      "verified_on_build": [26100, 26200],
+      "inverse": "snapshot",
+      "group": "behavior",
+      "user_text_ru": "Отключить службу диагностики DiagTrack. Предлагается только при положительных следах использования; перед изменением снимается снимок значения Start.",
+      "user_text_en": "Disable the DiagTrack diagnostics service. Offered only when positive usage evidence exists; the Start value is snapshotted before the change."
+    },
+    {
+      "id": "startup-task-u4",
+      "findingId": "scheduled-task-count",
+      "target": [
+        { "Kind": "task", "Path": "\\Startup\\Example App", "Enabled": false }
+      ],
+      "category": "B",
+      "evidence_rule": {
+        "kind": "telemetry",
+        "metric": "intent.task_history_events",
+        "domain": "intent",
+        "predicate": "at-least:1"
+      },
+      "verified_on_build": [26100, 26200],
+      "inverse": "snapshot",
+      "group": "behavior",
+      "user_text_ru": "Отключить задачу автозапуска. Предлагается только при положительных следах использования; перед изменением снимается снимок состояния задачи.",
+      "user_text_en": "Disable a startup task. Offered only when positive usage evidence exists; the task state is snapshotted before the change."
+    },
+    {
+      "id": "startup-shortcut-u4",
+      "findingId": "startup-entries",
+      "target": [
+        { "Kind": "file", "Path": "%APPDATA%\\Microsoft\\Windows\\Start Menu\\Programs\\Startup\\OneDrive.lnk", "Role": "quarantine" }
+      ],
+      "category": "B",
+      "evidence_rule": {
+        "kind": "telemetry",
+        "metric": "intent.userassist_entries",
+        "domain": "intent",
+        "predicate": "at-least:1"
+      },
+      "verified_on_build": [26100, 26200],
+      "inverse": "quarantine",
+      "group": "behavior",
+      "user_text_ru": "Убрать ярлык из папки «Автозагрузка» в карантин. Предлагается только при положительных следах использования; ярлык сохраняется байт-в-байт.",
+      "user_text_en": "Quarantine a Startup-folder shortcut. Offered only when positive usage evidence exists; the shortcut is preserved byte for byte."
+    },
+    {
+      "id": "spooler-no-printers",
+      "findingId": "auto-services",
+      "target": [
+        { "Kind": "service", "Name": "Spooler", "Start": 4 }
+      ],
+      "category": "B",
+      "evidence_rule": {
+        "kind": "state",
+        "metric": "printers.count",
+        "domain": "printers",
+        "predicate": "equals:0"
+      },
+      "verified_on_build": [26100, 26200],
+      "inverse": "snapshot",
+      "group": "behavior",
+      "user_text_ru": "Отключить службу печати, когда принтеров нет. Предлагается только при printers.count=0; перед изменением снимается снимок значения Start.",
+      "user_text_en": "Disable the print spooler when no printers exist. Offered only when printers.count=0; the Start value is snapshotted before the change."
+    },
+    {
+      "id": "tips",
+      "findingId": "process-count",
+      "target": [
+        { "Kind": "registry", "Path": "HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\ContentDeliveryManager", "Name": "SubscribedContent-338389Enabled" }
+      ],
+      "category": "B",
+      "evidence_rule": {
+        "kind": "state",
+        "metric": "ux.tips_enabled",
+        "domain": "ux",
+        "predicate": "equals:true"
+      },
+      "verified_on_build": [26100, 26200],
+      "inverse": "snapshot",
+      "group": "behavior",
+      "user_text_ru": "Отключить подсказки и советы Windows. Предлагается только когда они включены; прежнее значение сохраняется в снимке.",
+      "user_text_en": "Disable Windows tips and suggestions. Offered only when they are enabled; the previous value is kept in a snapshot."
+    },
+    {
+      "id": "advertising-id",
+      "findingId": "process-count",
+      "target": [
+        { "Kind": "registry", "Path": "HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\AdvertisingInfo", "Name": "Enabled" }
+      ],
+      "category": "B",
+      "evidence_rule": {
+        "kind": "state",
+        "metric": "ads.advertising_id_enabled",
+        "domain": "ads",
+        "predicate": "equals:true"
+      },
+      "verified_on_build": [26100, 26200],
+      "inverse": "snapshot",
+      "group": "behavior",
+      "user_text_ru": "Отключить идентификатор рекламы. Предлагается только когда он включён; прежнее значение сохраняется в снимке.",
+      "user_text_en": "Disable the advertising ID. Offered only when it is enabled; the previous value is kept in a snapshot."
+    },
+    {
+      "id": "search-web",
+      "findingId": "process-count",
+      "target": [
+        { "Kind": "registry", "Path": "HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Search", "Name": "BingSearchEnabled" }
+      ],
+      "category": "B",
+      "evidence_rule": {
+        "kind": "state",
+        "metric": "search.web_results_enabled",
+        "domain": "search",
+        "predicate": "equals:true"
+      },
+      "verified_on_build": [26100, 26200],
+      "inverse": "snapshot",
+      "group": "behavior",
+      "user_text_ru": "Отключить веб-результаты в поиске Windows. Предлагается только когда они включены; прежнее значение сохраняется в снимке.",
+      "user_text_en": "Disable web results in Windows Search. Offered only when they are enabled; the previous value is kept in a snapshot."
+    }
+  ]
+}

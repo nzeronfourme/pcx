@@ -1,0 +1,33 @@
+{
+  "schema": "pcx-environment/1",
+  "profile": "s-mode",
+  "capturedAt": "2026-10-30T00:00:00.0000000Z",
+  "os": {
+    "productName": { "value": "Windows 11 Home in S mode", "status": "measured" },
+    "build": { "value": 22631, "status": "measured" },
+    "ubr": { "value": 4169, "status": "measured" },
+    "edition": { "value": "CloudEdition", "status": "measured" }
+  },
+  "sMode": { "value": true, "status": "measured" },
+  "managed": { "value": false, "status": "measured", "markers": [] },
+  "vbs": { "value": true, "status": "measured" },
+  "hvci": { "value": true, "status": "measured" },
+  "bitLocker": { "value": { "volumes": [], "protectedCount": 0, "anyProtected": false }, "status": "measured" },
+  "defender": { "value": { "products": ["Microsoft Defender"], "present": true }, "status": "measured" },
+  "firewall": { "value": { "Domain": true, "Private": true, "Public": true, "anyEnabled": true }, "status": "measured" },
+  "tpm": { "value": { "present": true, "ready": true, "version": "2.0" }, "status": "measured" },
+  "anticheat": { "value": { "present": false, "detected": [] }, "status": "measured" },
+  "devDrive": { "value": { "present": false, "volumes": [] }, "status": "measured" },
+  "printers": { "value": 0, "status": "measured" },
+  "memory": { "value": { "totalBytes": 8589934592 }, "status": "measured" },
+  "gpu": { "value": { "controllers": [{ "name": "Intel(R) UHD Graphics", "driverVersion": "31.0.101.4502", "adapterRam": 1073741824 }] }, "status": "measured" },
+  "hags": { "value": 1, "status": "measured" },
+  "gameDvr": { "value": { "appCaptureEnabled": 0, "gameDvrEnabled": 0, "enabled": false }, "status": "measured" },
+  "powerPlan": { "value": { "guid": "381b4222-f694-41f0-9685-ff5bb260df2e", "name": "Balanced" }, "status": "measured" },
+  "paths": {
+    "LOCALAPPDATA": "C:\\Users\\tester\\AppData\\Local",
+    "APPDATA": "C:\\Users\\tester\\AppData\\Roaming",
+    "PROGRAMDATA": "C:\\ProgramData",
+    "SYSTEMROOT": "C:\\Windows"
+  }
+}

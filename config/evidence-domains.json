@@ -1,0 +1,42 @@
+{
+  "schema": "pcx-evidence-domains/1",
+  "targets": [
+    {
+      "path": "HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced",
+      "domain": "ux"
+    },
+    {
+      "path": "HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\ContentDeliveryManager",
+      "domain": "ads"
+    },
+    {
+      "path": "HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\GameDVR",
+      "domain": "performance"
+    },
+    {
+      "path": "HKCU\\Software\\Microsoft\\GameBar",
+      "domain": "performance"
+    },
+    {
+      "path": "HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Search",
+      "domain": "search"
+    },
+    {
+      "path": "HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\AdvertisingInfo",
+      "domain": "ads"
+    },
+    {
+      "path": "HKCU\\System\\GameConfigStore",
+      "domain": "performance"
+    },
+    {
+      "path": "HKLM\\SYSTEM\\CurrentControlSet\\Control\\GraphicsDrivers",
+      "name": "HwSchMode",
+      "domain": "performance"
+    }
+  ],
+  "subsystems": {
+    "svc": "services",
+    "task": "startup"
+  }
+}

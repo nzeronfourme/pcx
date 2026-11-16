@@ -1,0 +1,37 @@
+{
+  "schema": "pcx-environment/1",
+  "profile": "managed",
+  "capturedAt": "2026-10-30T00:00:00.0000000Z",
+  "os": {
+    "productName": { "value": "Windows 11 Enterprise", "status": "measured" },
+    "build": { "value": 22631, "status": "measured" },
+    "ubr": { "value": 4169, "status": "measured" },
+    "edition": { "value": "Enterprise", "status": "measured" }
+  },
+  "sMode": { "value": false, "status": "measured" },
+  "managed": {
+    "value": true,
+    "status": "measured",
+    "markers": ["HKLM\\SOFTWARE\\Microsoft\\Enrollments\\corp", "HKLM\\SOFTWARE\\Microsoft\\PolicyManager\\current\\device"]
+  },
+  "vbs": { "value": true, "status": "measured" },
+  "hvci": { "value": true, "status": "measured" },
+  "bitLocker": { "value": { "volumes": [], "protectedCount": 1, "anyProtected": true }, "status": "measured" },
+  "defender": { "value": { "products": ["Microsoft Defender"], "present": true }, "status": "measured" },
+  "firewall": { "value": { "Domain": true, "Private": true, "Public": true, "anyEnabled": true }, "status": "measured" },
+  "tpm": { "value": { "present": true, "ready": true, "version": "2.0" }, "status": "measured" },
+  "anticheat": { "value": { "present": false, "detected": [] }, "status": "measured" },
+  "devDrive": { "value": { "present": false, "volumes": [] }, "status": "measured" },
+  "printers": { "value": 1, "status": "measured" },
+  "memory": { "value": { "totalBytes": 17179869184 }, "status": "measured" },
+  "gpu": { "value": { "controllers": [{ "name": "Intel(R) UHD Graphics", "driverVersion": "31.0.101.4502", "adapterRam": 1073741824 }] }, "status": "measured" },
+  "hags": { "value": 1, "status": "measured" },
+  "gameDvr": { "value": { "appCaptureEnabled": 1, "gameDvrEnabled": 1, "enabled": true }, "status": "measured" },
+  "powerPlan": { "value": { "guid": "381b4222-f694-41f0-9685-ff5bb260df2e", "name": "Balanced" }, "status": "measured" },
+  "paths": {
+    "LOCALAPPDATA": "C:\\Users\\tester\\AppData\\Local",
+    "APPDATA": "C:\\Users\\tester\\AppData\\Roaming",
+    "PROGRAMDATA": "C:\\ProgramData",
+    "SYSTEMROOT": "C:\\Windows"
+  }
+}

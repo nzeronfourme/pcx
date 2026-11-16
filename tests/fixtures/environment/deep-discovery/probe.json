@@ -1,0 +1,8 @@
+{
+  "schema": "pcx-probe-fixture/1",
+  "profile": "deep-discovery",
+  "note": "One machine fact no fixed finding id covers: sustained total-CPU saturation. The fixed registry has process counts and top-RAM processes but no total-CPU-percent finding, so a deep agent must issue a typed counter probe and land the fact as an extension finding.",
+  "counters": {
+    "\\Processor(_Total)\\% Processor Time": 87.25
+  }
+}

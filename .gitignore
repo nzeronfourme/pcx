@@ -1,0 +1,5 @@
+# pcx keeps its state in %LOCALAPPDATA%\pcx, outside the repository.
+# This file only silences OS and editor noise in a working copy.
+Thumbs.db
+desktop.ini
+.DS_Store

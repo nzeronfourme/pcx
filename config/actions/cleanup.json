@@ -1,0 +1,87 @@
+{
+  "schema": "pcx-actions/1",
+  "file": "cleanup",
+  "actions": [
+    {
+      "id": "thumbnails",
+      "findingId": "system-free-space",
+      "target": [
+        { "Kind": "file", "Path": "%LOCALAPPDATA%\\Microsoft\\Windows\\Explorer\\thumbcache_32.db", "Role": "a1" },
+        { "Kind": "file", "Path": "%LOCALAPPDATA%\\Microsoft\\Windows\\Explorer\\thumbcache_96.db", "Role": "a1" },
+        { "Kind": "file", "Path": "%LOCALAPPDATA%\\Microsoft\\Windows\\Explorer\\thumbcache_256.db", "Role": "a1" },
+        { "Kind": "file", "Path": "%LOCALAPPDATA%\\Microsoft\\Windows\\Explorer\\thumbcache_1024.db", "Role": "a1" }
+      ],
+      "category": "A1",
+      "evidence_rule": {
+        "kind": "telemetry",
+        "metric": "storage.system_free_bytes",
+        "domain": "storage"
+      },
+      "verified_on_build": [26100, 26200],
+      "inverse": "manifest-only",
+      "group": "safe",
+      "user_text_ru": "Удалить кэш миниатюр Explorer. Windows пересоздаст его при следующем просмотре папок; восстановление невозможно.",
+      "user_text_en": "Delete the Explorer thumbnail cache. Windows regenerates it the next time folders are viewed; this is not restorable."
+    },
+    {
+      "id": "icon-cache",
+      "findingId": "system-free-space",
+      "target": [
+        { "Kind": "file", "Path": "%LOCALAPPDATA%\\Microsoft\\Windows\\Explorer\\iconcache_16.db", "Role": "a1" },
+        { "Kind": "file", "Path": "%LOCALAPPDATA%\\Microsoft\\Windows\\Explorer\\iconcache_32.db", "Role": "a1" },
+        { "Kind": "file", "Path": "%LOCALAPPDATA%\\Microsoft\\Windows\\Explorer\\iconcache_48.db", "Role": "a1" },
+        { "Kind": "file", "Path": "%LOCALAPPDATA%\\Microsoft\\Windows\\Explorer\\iconcache_96.db", "Role": "a1" },
+        { "Kind": "file", "Path": "%LOCALAPPDATA%\\Microsoft\\Windows\\Explorer\\iconcache_256.db", "Role": "a1" },
+        { "Kind": "file", "Path": "%LOCALAPPDATA%\\Microsoft\\Windows\\Explorer\\iconcache_1024.db", "Role": "a1" },
+        { "Kind": "file", "Path": "%LOCALAPPDATA%\\Microsoft\\Windows\\Explorer\\iconcache_idx.db", "Role": "a1" }
+      ],
+      "category": "A1",
+      "evidence_rule": {
+        "kind": "telemetry",
+        "metric": "storage.system_free_bytes",
+        "domain": "storage"
+      },
+      "verified_on_build": [26100, 26200],
+      "inverse": "manifest-only",
+      "group": "safe",
+      "user_text_ru": "Удалить кэш иконок Explorer. Windows пересоздаст его автоматически; восстановление невозможно.",
+      "user_text_en": "Delete the Explorer icon cache. Windows rebuilds it automatically; this is not restorable."
+    },
+    {
+      "id": "delivery-optimization-cache",
+      "findingId": "system-free-space",
+      "target": [
+        { "Kind": "file", "Path": "%SYSTEMROOT%\\ServiceProfiles\\NetworkService\\AppData\\Local\\Microsoft\\Windows\\DeliveryOptimization\\Cache", "Role": "a1" }
+      ],
+      "category": "A1",
+      "evidence_rule": {
+        "kind": "telemetry",
+        "metric": "storage.system_free_bytes",
+        "domain": "storage"
+      },
+      "verified_on_build": [26100, 26200],
+      "inverse": "manifest-only",
+      "group": "safe",
+      "user_text_ru": "Удалить кэш оптимизации доставки. Обновления скачаются заново при необходимости; восстановление невозможно.",
+      "user_text_en": "Delete the Delivery Optimization cache. Updates re-download when needed; this is not restorable."
+    },
+    {
+      "id": "windows-update-download-cache",
+      "findingId": "system-free-space",
+      "target": [
+        { "Kind": "file", "Path": "%SYSTEMROOT%\\SoftwareDistribution\\Download", "Role": "a1" }
+      ],
+      "category": "A1",
+      "evidence_rule": {
+        "kind": "telemetry",
+        "metric": "storage.system_free_bytes",
+        "domain": "storage"
+      },
+      "verified_on_build": [26100, 26200],
+      "inverse": "manifest-only",
+      "group": "safe",
+      "user_text_ru": "Удалить кэш скачанных обновлений Windows. Windows загрузит их снова при следующей проверке; восстановление невозможно.",
+      "user_text_en": "Delete the downloaded Windows Update cache. Windows downloads updates again on the next check; this is not restorable."
+    }
+  ]
+}

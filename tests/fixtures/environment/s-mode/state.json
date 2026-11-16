@@ -1,0 +1,32 @@
+{
+  "schema": "pcx-scan-state/1",
+  "profile": "s-mode",
+  "storage": {
+    "systemDrive": "C:",
+    "freeBytes": 128849018880,
+    "totalBytes": 256060514304,
+    "freePercent": 50.32
+  },
+  "services": {
+    "runningCount": 119,
+    "autoCount": 78
+  },
+  "startup": {
+    "runValuesCount": 2
+  },
+  "intent": {
+    "userAssistEntries": 41,
+    "prefetchFiles": 57,
+    "taskHistoryEvents": 3
+  },
+  "printers": {
+    "defaultCount": 0
+  },
+  "memory": {
+    "availableBytes": 2147483648
+  },
+  "performance": {
+    "overlayProcessCount": 0,
+    "backgroundProcessCount": 132
+  }
+}

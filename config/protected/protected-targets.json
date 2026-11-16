@@ -1,0 +1,134 @@
+{
+  "schema": "pcx-protected/1",
+  "registry": {
+    "trustedInstallerKeys": [
+      "HKLM\\SOFTWARE\\Classes",
+      "HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\SideBySide",
+      "HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Component Based Servicing",
+      "HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\WindowsUpdate",
+      "HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Appx",
+      "HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\PackagedCom",
+      "HKLM\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion"
+    ],
+    "bootChainKeys": [
+      "HKLM\\SYSTEM\\CurrentControlSet\\Control\\Session Manager",
+      "HKLM\\SYSTEM\\CurrentControlSet\\Control\\SafeBoot",
+      "HKLM\\SYSTEM\\CurrentControlSet\\Control\\BootDriverGroup",
+      "HKLM\\SYSTEM\\CurrentControlSet\\Control\\Class",
+      "HKLM\\SYSTEM\\CurrentControlSet\\Services"
+    ],
+    "securityKeys": [
+      "HKLM\\SYSTEM\\CurrentControlSet\\Control\\Lsa",
+      "HKLM\\SYSTEM\\CurrentControlSet\\Control\\DeviceGuard",
+      "HKLM\\SYSTEM\\CurrentControlSet\\Control\\CI",
+      "HKLM\\SOFTWARE\\Policies\\Microsoft\\Windows\\Defender",
+      "HKLM\\SOFTWARE\\Microsoft\\Windows Defender"
+    ]
+  },
+  "services": {
+    "bootChain": [
+      "BootDefragDriver"
+    ],
+    "security": [
+      "WinDefend",
+      "WdNisSvc",
+      "Sense",
+      "SecurityHealthService",
+      "wscsvc",
+      "mpssvc",
+      "BFE",
+      "MsMpSvc",
+      "SgrmBroker",
+      "KeyIso",
+      "SamSs",
+      "VaultSvc"
+    ],
+    "kernelDrivers": [
+      "Wdf01000",
+      "WdfLdr",
+      "ACPI",
+      "pci",
+      "ndis",
+      "tcpip",
+      "afd",
+      "disk",
+      "volmgr",
+      "partmgr",
+      "stornvme",
+      "storahci",
+      "WudfPf",
+      "CI",
+      "mouclass",
+      "kbdclass",
+      "NetBT",
+      "gpuenergydrv"
+    ]
+  },
+  "anticheat": {
+    "services": [
+      "vgk",
+      "vgc",
+      "EasyAntiCheat",
+      "EasyAntiCheat_EOS",
+      "BEService",
+      "BEDaisy",
+      "PnkBstrA",
+      "PnkBstrB",
+      "FaceitAC",
+      "ESEADriver2",
+      "mhyprot2",
+      "GGProtect",
+      "GameGuard"
+    ],
+    "registryKeys": [
+      "HKLM\\SYSTEM\\CurrentControlSet\\Services\\vgk",
+      "HKLM\\SYSTEM\\CurrentControlSet\\Services\\vgc",
+      "HKLM\\SYSTEM\\CurrentControlSet\\Services\\EasyAntiCheat"
+    ],
+    "taskPrefixes": [
+      "\\Faceit",
+      "\\EasyAntiCheat"
+    ]
+  },
+  "registryAllow": {
+    "hkcuSubkeys": [
+      "Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced",
+      "Software\\Microsoft\\Windows\\CurrentVersion\\ContentDeliveryManager",
+      "Software\\Microsoft\\Windows\\CurrentVersion\\GameDVR",
+      "Software\\Microsoft\\Windows\\CurrentVersion\\Search",
+      "Software\\Microsoft\\Windows\\CurrentVersion\\AdvertisingInfo",
+      "System\\GameConfigStore",
+      "Software\\Microsoft\\GameBar"
+    ],
+    "hklmValues": [
+      {
+        "path": "HKLM\\SYSTEM\\CurrentControlSet\\Control\\GraphicsDrivers",
+        "name": "HwSchMode"
+      }
+    ]
+  },
+  "tasks": {
+    "systemPrefix": "\\Microsoft\\Windows\\"
+  },
+  "files": {
+    "a1_roots": [
+      "%LOCALAPPDATA%\\Microsoft\\Windows\\Explorer\\thumbcache_32.db",
+      "%LOCALAPPDATA%\\Microsoft\\Windows\\Explorer\\thumbcache_96.db",
+      "%LOCALAPPDATA%\\Microsoft\\Windows\\Explorer\\thumbcache_256.db",
+      "%LOCALAPPDATA%\\Microsoft\\Windows\\Explorer\\thumbcache_1024.db",
+      "%LOCALAPPDATA%\\Microsoft\\Windows\\Explorer\\iconcache_16.db",
+      "%LOCALAPPDATA%\\Microsoft\\Windows\\Explorer\\iconcache_32.db",
+      "%LOCALAPPDATA%\\Microsoft\\Windows\\Explorer\\iconcache_48.db",
+      "%LOCALAPPDATA%\\Microsoft\\Windows\\Explorer\\iconcache_96.db",
+      "%LOCALAPPDATA%\\Microsoft\\Windows\\Explorer\\iconcache_256.db",
+      "%LOCALAPPDATA%\\Microsoft\\Windows\\Explorer\\iconcache_1024.db",
+      "%LOCALAPPDATA%\\Microsoft\\Windows\\Explorer\\iconcache_idx.db",
+      "%SYSTEMROOT%\\SoftwareDistribution\\Download",
+      "%SYSTEMROOT%\\ServiceProfiles\\NetworkService\\AppData\\Local\\Microsoft\\Windows\\DeliveryOptimization\\Cache"
+    ],
+    "a2_roots": [
+      "%APPDATA%\\Microsoft\\Windows\\Start Menu\\Programs\\Startup",
+      "%PROGRAMDATA%\\Microsoft\\Windows\\Start Menu\\Programs\\Startup"
+    ]
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "schema": "pcx-proposals/1",
+  "profile": "desktop",
+  "note": "One invented target outside the seed catalog. The action id supplies the inverse and category; the target is not listed in config/actions/*.json and is allowed only because grammar, telemetry evidence with a matching domain, and policy all hold.",
+  "proposals": [
+    {
+      "actionId": "startup-task-u4",
+      "user_text_en": "Disable an agent-found startup task that is not in the seed catalog. The task state is snapshotted before the change.",
+      "user_text_ru": "Отключить найденную агентом задачу автозапуска, которой нет в каталоге. Состояние задачи сохраняется в снимок до изменения.",
+      "target": {
+        "Kind": "task",
+        "Path": "\\PcxDemo\\AgentFound",
+        "Enabled": false
+      },
+      "evidence": {
+        "kind": "telemetry",
+        "metric": "startup.task_history_events",
+        "domain": "startup",
+        "value": 9,
+        "status": "measured",
+        "window": "7d"
+      }
+    }
+  ]
+}
