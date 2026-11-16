@@ -6,7 +6,7 @@ to PATH.
 
 ## Release identity
 
-Release commit id: `3900a6277a8803ca011a0e6b87137814835e0b71`
+Release commit id: `fd4a554c493535a9175efb7f13cfa2c99dd96345`
 
 Before a release this file carries the placeholder above; that is the legitimate
 pre-release state. When a release is cut, the release process replaces the
